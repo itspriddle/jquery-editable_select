@@ -2,7 +2,7 @@
  * jQuery Editable Select
  *
  * @author      Joshua Priddle <itspriddle@nevercraft.net>
- * @version     0.0.1
+ * @version     0.0.2
  * @url         http://github.com/itspriddle/jquery-editable_select
  */
 
@@ -20,8 +20,17 @@
 
       self.change(function() {
         if (self.val() == settings.key) {
-          var html = '<input type="text" name="' + self.attr('name') + '" />';
-          self.replaceWith(html);
+          var attr  = { type: 'text' },
+              name  = self.attr('name'),
+              id    = self.attr('id'),
+              klass = self.attr('class');
+
+          if (name)  attr.name     = name;
+          if (id)    attr.id       = id;
+          if (klass) attr['class'] = klass;
+
+          var tag = $('<input>', attr);
+          self.replaceWith(tag);
         }
       });
     });

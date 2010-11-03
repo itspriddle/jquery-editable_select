@@ -11,7 +11,7 @@ selected, the select element changes into a text field.
     });
 
     <label for="movie">Best Movie Ever</label>
-    <select class="editable" name="movie">
+    <select class="editable" name="movie" id="movie">
       <option>Back To The Future</option>
       <option>Robocop</option>
       <option>The Matrix</option>
@@ -21,7 +21,7 @@ The dropdown above will have an additional option appended to the bottom,
 `<option value="other">Other</option>`. If the user selects this, the select
 tag will be changed to the following input tag:
 
-    <input type="text" name="movie" />
+    <input type="text" name="movie" class="editable" id="movie" />
 
 # License
 
